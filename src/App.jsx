@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard";
 import { useState } from "react";
+import { useEffect } from "react";
 
 
 const pokemonList = [
@@ -35,14 +36,19 @@ function App() {
 
   const [clickedPokemon, setClickedPokemon] = useState(0)
 
-
+        useEffect(
+            () => {
+             alert("Hello pokemon trainer :)"); 
+            },
+            []  
+            );
 
 
   return (
       <div>
         <PokemonCard pokemon={pokemonList[clickedPokemon]}/> 
         
-        <NavBar name={pokemonList.name} pokemons={pokemonList} setClickedPokemon={setClickedPokemon} clickedPokemon={clickedPokemon} />
+        <NavBar name={pokemonList.name} pokemons={pokemonList} setClickedPokemon={setClickedPokemon} clickedPokemon={clickedPokemon} useEffect={useEffect}/>
  
       </div>
     ) 
